@@ -10,7 +10,7 @@ const federation = await runEsBuildBuilder('federation.config.js', {
   tsConfig: 'tsconfig.json',
   dev: isDev,
   watch: isDev,
-  entryPoints: ['src/app.tsx'],
+  entryPoints: ['src/bootstrap.tsx'],
   adapterConfig: { plugins: [] },
 });
 

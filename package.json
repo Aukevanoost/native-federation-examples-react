@@ -16,7 +16,7 @@
   "devDependencies": {
     "@chialab/esbuild-plugin-commonjs": "^0.19.1",
     "@softarc/native-federation": "^4.0.0",
-    "@softarc/native-federation-esbuild": "4.0.0-RC9",
+    "@softarc/native-federation-esbuild": "4.0.0-RC10",
     "@types/react": "^18.3.18",
     "@types/react-dom": "^18.3.5",
     "es-module-shims": "^2.8.0",

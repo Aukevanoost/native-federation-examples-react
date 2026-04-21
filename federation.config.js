@@ -7,7 +7,7 @@ export default withNativeFederation({
   name: "@team/mfe1",
 
   exposes: {
-    "./Bootstrap": "./src/app.tsx"
+    "./Bootstrap": "./src/bootstrap.tsx"
   },
 
   shared: {
