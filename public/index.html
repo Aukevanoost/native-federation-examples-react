@@ -1,12 +1,32 @@
 <!doctype html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>React App</title>
+    <title>My Application</title>
+
+    <!-- 1. Define your micro frontends (remotes) -->
+    <script type="application/json" id="mfe-manifest">
+      {
+        "@team/mfe1": "./remoteEntry.json"
+      }
+    </script>
+
+    <!-- 2. Handle loaded modules -->
+    <script>
+      window.addEventListener(
+        "mfe-loader-available",
+        (e) => {
+          // Load your remote modules, a remote can have multiple modules
+          e.detail.loadRemoteModule("@team/mfe1", "./Bootstrap");
+        },
+        { once: true },
+      );
+    </script>
+
+    <!-- 3. Include the orchestrator runtime -->
+    <script src="https://unpkg.com/@softarc/native-federation-orchestrator@4.0.0/quickstart.mjs"></script>
   </head>
   <body>
-    <div id="root"></div>
-    <script type="module" src="/main.js"></script>
+    <!-- 4. Use your loaded components -->
+    <my-react-app></my-react-app>
   </body>
 </html>
